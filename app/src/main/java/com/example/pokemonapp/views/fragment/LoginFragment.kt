@@ -11,6 +11,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.pokemonapp.R
+import com.example.pokemonapp.views.models.PokeResponse
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
@@ -21,6 +22,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     private lateinit var passwordEditText: TextInputEditText
     private lateinit var login_btn: Button
     private lateinit var signup_btn: Button
+    private lateinit var prueba_btn: Button
     private lateinit var emailTextInputLayoutLogin: TextInputLayout
     private lateinit var passwTextInputLayoutLogin: TextInputLayout
     var emailValid = false
@@ -36,6 +38,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         signup_btn = view.findViewById(R.id.btnSignUp)
         emailTextInputLayoutLogin = view.findViewById(R.id.textInputLayoutEmailLogin)
         passwTextInputLayoutLogin = view.findViewById(R.id.textInputLayoutPasswLogin)
+        prueba_btn = view.findViewById(R.id.prueba)
 
 
         fun botonhabilitar() {
@@ -97,6 +100,11 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
         signup_btn.setOnClickListener{
             val action = LoginFragmentDirections.actionLoginFragmentToCreateAccountNavGraph()
+            findNavController().navigate(action)
+        }
+
+        prueba_btn.setOnClickListener{
+            val action = LoginFragmentDirections.actionLoginFragmentToPokeList2Fragment()
             findNavController().navigate(action)
         }
 

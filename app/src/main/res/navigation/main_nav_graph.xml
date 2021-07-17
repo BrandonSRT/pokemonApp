@@ -36,6 +36,9 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_loginFragment_to_pokeList2Fragment"
+            app:destination="@id/pokeList2Fragment" />
     </fragment>
     <fragment
         android:id="@+id/pokeListFragment"
@@ -60,4 +63,22 @@
             app:argType="com.example.pokemonapp.views.models.PokeInformation" />
     </fragment>
     <include app:graph="@navigation/create_account_nav_graph" />
+    <fragment
+        android:id="@+id/pokeList2Fragment"
+        android:name="com.example.pokemonapp.views.fragment.PokeList2Fragment"
+        android:label="fragment_poke_list2"
+        tools:layout="@layout/fragment_poke_list2" >
+        <action
+            android:id="@+id/action_pokeList2Fragment_to_pokeDetail2Fragment"
+            app:destination="@id/pokeDetail2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pokeDetail2Fragment"
+        android:name="com.example.pokemonapp.views.fragment.PokeDetail2Fragment"
+        android:label="fragment_poke_detail2"
+        tools:layout="@layout/fragment_poke_detail2" >
+        <argument
+            android:name="PokeResponse"
+            app:argType="com.example.pokemonapp.network.models.PokeResponse" />
+    </fragment>
 </navigation>
